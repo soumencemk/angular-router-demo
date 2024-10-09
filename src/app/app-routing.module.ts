@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'first', component: FirstComponent },
   { path: 'second', component: SecondComponent },
   { path: 'products', component: ProductlistComponent },
-  { path: 'products/:id', component: ProductdetailsComponent },
+  { path: 'products/:id', component: ProductdetailsComponent},
   { path: 'posts', component: PostsComponent },
   { path: 'posts/:id', component: PostdetailsComponent },
   { path: 'contact', component: ContactComponent },
