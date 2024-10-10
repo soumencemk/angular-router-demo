@@ -12,6 +12,7 @@ import { ProductsModule } from './products/products.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { PostsModule } from './posts/posts.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { PostsModule } from './posts/posts.module';
     FirstComponent,
     SecondComponent,
     NotFoundComponent, 
-    ContactComponent,   
+    ContactComponent, LoginComponent,   
   ],
   imports: [
     CommonModule,

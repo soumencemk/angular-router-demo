@@ -7,6 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  logout() {
+    localStorage.removeItem('currentUser');
+  }
   constructor(private router: Router) {}
 
   gotoContact() {

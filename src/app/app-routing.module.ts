@@ -8,16 +8,31 @@ import { ProductlistComponent } from './products/productlist/productlist.compone
 import { ProductdetailsComponent } from './products/productdetails/productdetails.component';
 import { PostsComponent } from './posts/posts/posts.component';
 import { PostdetailsComponent } from './posts/postdetails/postdetails.component';
+import { authGuard } from './guards/auth-guard.guard';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', component: FirstComponent },
-  { path: 'first', component: FirstComponent },
-  { path: 'second', component: SecondComponent },
-  { path: 'products', component: ProductlistComponent },
-  { path: 'products/:id', component: ProductdetailsComponent},
-  { path: 'posts', component: PostsComponent },
-  { path: 'posts/:id', component: PostdetailsComponent },
-  { path: 'contact', component: ContactComponent },
+  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'first', component: FirstComponent, canActivate: [authGuard] },
+  { path: 'second', component: SecondComponent, canActivate: [authGuard] },
+  {
+    path: 'products',
+    component: ProductlistComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'products/:id',
+    component: ProductdetailsComponent,
+    canActivate: [authGuard],
+  },
+  { path: 'posts', component: PostsComponent, canActivate: [authGuard] },
+  {
+    path: 'posts/:id',
+    component: PostdetailsComponent,
+    canActivate: [authGuard],
+  },
+  { path: 'contact', component: ContactComponent, canActivate: [authGuard] },
   { path: '**', component: NotFoundComponent },
 ];
 

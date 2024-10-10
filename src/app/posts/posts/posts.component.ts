@@ -16,10 +16,10 @@ export class PostsComponent implements OnInit {
     this.postService.getAllPosts().subscribe((posts) => {
       this.posts = posts;
       console.log(this.posts);
-    });    
+    });
   }
 
-  getRandomArbitrary(min:number, max:number) {
+  getRandomArbitrary(min: number, max: number) {
     return Math.floor(Math.random() * (max - min) + min);
-}
+  }
 }

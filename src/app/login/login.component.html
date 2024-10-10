@@ -1,0 +1,36 @@
+<div class="container px-5 my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 rounded-3 shadow">
+                <div class="card-body p-4">
+                    <div class="text-center">
+                        <div class="h1 fw-light">LOGIN</div>
+                    </div>
+                    <p class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</p>
+                    <form class="container p-5" [formGroup]="loginForm"
+                        (ngSubmit)="$event.preventDefault(); checkLogin()">
+                        <div class="mb-3">
+                            <label class="form-label">Email :</label>
+                            <input type="email" class="form-control" formControlName="email">
+                            <small class="alert alert-danger p-1 m-2"
+                                *ngIf="(loginForm.get('email')?.dirty || loginForm.get('email')?.touched) && loginForm.get('email')?.invalid">
+                                Invalid Email ID
+                            </small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" formControlName="password">
+                            <small class="alert alert-danger p-1 m-2"
+                                *ngIf="(loginForm.get('password')?.dirty || loginForm.get('password')?.touched)  && loginForm.get('password')?.invalid">
+                                Please Enter your password
+                            </small>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+                        </div>
+                    </form>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
