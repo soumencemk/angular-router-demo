@@ -1,5 +1,4 @@
-<div class="container">
-    <ul class="list-group border-rounded" *ngFor="let product of products">
-        <li class="list-group-item"><a [routerLink]="['/products',product.id]">{{product.name}}</a></li>
-    </ul>    
-</div>
+<mat-list *ngFor="let product of products">
+    <mat-list-item><a [routerLink]="['/products',product.id]">{{product.name}}</a></mat-list-item>
+    <mat-divider></mat-divider>
+</mat-list>
